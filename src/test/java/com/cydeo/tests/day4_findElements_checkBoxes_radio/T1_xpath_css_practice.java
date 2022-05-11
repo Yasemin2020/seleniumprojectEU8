@@ -38,10 +38,20 @@ public class T1_xpath_css_practice {
         //d. E-mail input box
         WebElement emailInput= driver.findElement(By.xpath("//input[@name='email']"));
 
+        WebElement emailInput2= driver.findElement(By.xpath("//input[contains(@pattern,'0-9')]"));
 
         //e. “Retrieve password” button
+        WebElement retrievePasswordButton= driver.findElement(By.xpath("//button[@id='form_submit']"));
+        WebElement retrievePasswordButton2= driver.findElement(By.xpath("//button[@class='radius']"));
 
         //f. “Powered by Cydeo text
+        WebElement poweredByCydeoText= driver.findElement(By.xpath("//div[@style='text-align: center;']"));
         //4. Verify all web elements are displayed.
+        System.out.println("homeLink_ex1.isDisplayed() = " + homeLink_ex1.isDisplayed());
+        System.out.println("header_ex1.isDisplayed() = " + header_ex1.isDisplayed());
+        System.out.println("emailInput.isDisplayed() = " + emailInput.isDisplayed());
+        System.out.println("retrievePasswordButton.isDisplayed() = " + retrievePasswordButton.isDisplayed());
+        System.out.println("emailLabel_ex1.isDisplayed() = " + emailLabel_ex1.isDisplayed());
+
     }
 }
