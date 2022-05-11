@@ -28,12 +28,19 @@ public class T1_xpath_css_practice {
         WebElement header_ex1= driver.findElement(By.cssSelector("div.example>h2"));
 
         //Locate header xpath:locate parent element and move down to h2
+        //WebElement header_ex2= driver.findElement(By.xpath("//h2[.='Forgot Password']"));//. is the same with text()
         WebElement header_ex2= driver.findElement(By.xpath("//h2[text()='Forgot Password']"));
 
 
         //c. “E-mail” text
+        WebElement emailLabel_ex1= driver.findElement(By.xpath("//label[@for='email']"));
+
         //d. E-mail input box
+        WebElement emailInput= driver.findElement(By.xpath("//input[@name='email']"));
+
+
         //e. “Retrieve password” button
+
         //f. “Powered by Cydeo text
         //4. Verify all web elements are displayed.
     }
