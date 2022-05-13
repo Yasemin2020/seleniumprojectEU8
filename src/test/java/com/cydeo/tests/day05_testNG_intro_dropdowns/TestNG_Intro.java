@@ -34,7 +34,7 @@ public class TestNG_Intro {
         String actual="apple";
         String expected="apple";
 
-        Assert.assertEquals(actual,expected);
+        Assert.assertEquals(actual,expected,"your message will go here");
     }
     @Test(priority = 2)
     public void test2(){
