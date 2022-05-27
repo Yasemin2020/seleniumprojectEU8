@@ -21,7 +21,7 @@ public class T1_window_handling_test {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://www.amazon.com");
+
     }
 
     @Test
