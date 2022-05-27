@@ -26,4 +26,22 @@ public class CRM_Utilities {
     }
 
 
+    public static void crm_login(WebDriver driver, String username, String password){
+        //3. Enter valid username
+        //helpdesk1@cybertekschool.com  UserUser
+        //Helpdesk2@cybertekschool.com  UserUser
+        WebElement inpuUsername= driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
+        inpuUsername.sendKeys(username);
+
+        //4. Enter valid password
+        WebElement inputPassword = driver.findElement((By.xpath("//input[@name='USER_PASSWORD']")));
+        inputPassword.sendKeys(password);
+
+        //5. Click to `Log In` button
+        WebElement loginButton = driver.findElement(By.xpath("//input[@value ='Log In']"));
+        loginButton.click();
+
+    }
+
+
 }

@@ -51,7 +51,8 @@ public class T3_CRM_LOGIN {
         //2. Go to : http://login1.nextbasecrm.com/
         driver.get("http://login1.nextbasecrm.com/ ");
 
-        CRM_Utilities.crm_login(driver);
+        //Calling my Utility method to login helpdesk1
+        CRM_Utilities.crm_login(driver, "helpdesk1@cybertekschool.com", "UserUser");
         //6. Verify title is as expected:
         //Expected: Portal
 
