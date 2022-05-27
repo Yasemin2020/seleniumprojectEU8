@@ -1,9 +1,9 @@
 package com.cydeo.tests.day07_webtables_utilities_javafaker;
 
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -36,7 +36,7 @@ public class T1_window_handling_test {
 
         //4. Create a logic to switch to the tab where Etsy.com is open
 
-        for (String windowHandle : driver.getWindowHandles()) {
+    /*    for (String windowHandle : driver.getWindowHandles()) {
 
             driver.switchTo().window(windowHandle);
             System.out.println("Current URL: "+ driver.getCurrentUrl());
@@ -51,14 +51,11 @@ public class T1_window_handling_test {
         String actualTitle=driver.getTitle();
         String expectedInTitle="Etsy";
 
-        Assert.assertEquals(actualTitle, expectedInTitle);
+        Assert.assertEquals(actualTitle, expectedInTitle);*/
 
-        //Lines to be pasted:
-        //((JavascriptExecutor) driver).executeScript("window.open('http://google.com','_blank');");
-        //((JavascriptExecutor) driver).executeScript("window.open('http://etsy.com','_blank');");
-        //((JavascriptExecutor) driver).executeScript("window.open('http://facebook.com','_blank');");
+        BrowserUtils.switchWindowAndVerify(driver,"etsy","Etsy");
 
-        //These lines will simply open new tabs using something called JavascriptExecutor
+
 
 
     }
