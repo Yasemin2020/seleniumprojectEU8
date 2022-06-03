@@ -57,6 +57,10 @@ public class Driver {
     }
 
 
+//driver.quit()---> nosuchsession
+//driverclose()--->
+
+//try to create a method named closeDriver
 
 
 }
