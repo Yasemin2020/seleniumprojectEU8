@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -20,6 +21,10 @@ public class T7_NonSelect {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         driver.get("https://practice.cydeo.com/dropdown");
+    }
+    @AfterMethod
+    public void tearDownMethod(){
+        driver.close();
     }
     @Test
     public void nonSelect(){
@@ -38,11 +43,20 @@ public class T7_NonSelect {
     }
     @Test
     public void multipleSelectDropdown(){
-        List<WebElement> multipleSelectDropdown =driver.findElements(By.xpath("//select[@name='Languages']"));
+        List<WebElement> multipleSelectDropdown =driver.findElements(By.xpath("//select[@name='Languages']//option"));
+        Select select = new Select(driver.findElement(By.xpath("//select[@name='Languages']")));
         for (WebElement each : multipleSelectDropdown) {
-            Select dropdown= new Select(driver.findElement(By.xpath("//select[@id='state']")));
-            dropdown.selectByValue("IL");
-            dropdown.selectByVisibleText("Virginia");
+            select.selectByVisibleText(each.getText());
+            driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
+        }
+        for (WebElement each : multipleSelectDropdown) {
+            if (each.isSelected()){
+                System.out.println(each.getText());
+            }
+        }
+        for (WebElement eachLanguage : multipleSelectDropdown) {
+            select.deselectAll();
         }
 
 
