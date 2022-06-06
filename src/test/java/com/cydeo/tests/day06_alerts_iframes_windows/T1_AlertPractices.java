@@ -80,7 +80,7 @@ Alert alert =driver.switchTo().alert();
         //6. Verify “You entered:  hello” text is displayed.
         WebElement promptText= driver.findElement(By.xpath("//p[@id='result']"));
         String actualPromptText = promptText.getText();
-        Assert.assertEquals(actualPromptText, "You entered:  hello");
+        Assert.assertEquals(actualPromptText, "You entered: hello");
 
     }
 
