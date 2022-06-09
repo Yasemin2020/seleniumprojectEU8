@@ -1,4 +1,4 @@
-package com.cydeo.tests.dya10_upload_actions_jsexecuter;
+package com.cydeo.tests.day10_upload_actions_jsexecuter;
 
 import com.cydeo.utilities.ConfigurationReader;
 import com.cydeo.utilities.Driver;
