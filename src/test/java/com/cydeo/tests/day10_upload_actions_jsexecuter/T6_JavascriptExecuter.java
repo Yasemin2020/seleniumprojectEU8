@@ -12,7 +12,7 @@ public class T6_JavascriptExecuter {
     //2- Go to: https://practice.cydeo.com/infinite_scroll
     Driver.getDriver().get("https://practice.cydeo.com/infinite_scroll");
 
-
+//a.  750 pixels down 10 times.
     //3- Use below JavaScript method and scroll
     for (int i = 0; i < 10; i++) {
 
@@ -23,6 +23,15 @@ public class T6_JavascriptExecuter {
         js.executeScript("window.scrollBy(0,750)");
         // ((JavascriptExecutor) Driver.getDriver()).executeScript("window.scrollBy(0,750)"); write it iin one line
     }
+    for (int i = 0; i < 10; i++) {
+
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        BrowserUtils.sleep(1);
+        //x,y
+        js.executeScript("window.scrollBy(0,-750)");
+        // ((JavascriptExecutor) Driver.getDriver()).executeScript("window.scrollBy(0,750)"); write it iin one line
+    }
 
 
 
@@ -31,7 +40,7 @@ public class T6_JavascriptExecuter {
 }
 
 
-//a.  750 pixels down 10 times.
+
 //b.  750 pixels up 10 times
 //
 //JavaScript method to use : window.scrollBy(0,0)
