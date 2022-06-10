@@ -49,5 +49,24 @@ public class POMPractices {
 
 
     }
+    @Test
+    public void library_negative_login_test(){
+        //1- Open a chrome browser
+        //2- Go to: https://library1.cydeo.com
+        Driver.getDriver().get("https://library1.cydeo.com");
+
+        libraryLoginPage = new LibraryLoginPage();
+
+        //3- Enter incorrect username or incorrect password
+        libraryLoginPage.inputUserName.sendKeys("wrong@username.com");
+        libraryLoginPage.inputPassword.sendKeys("wrongpassword");
+        libraryLoginPage.signInButton.click();
+
+        //4- Verify title expected error is displayed:
+        //Expected: Sorry, Wrong Email or Password
+        Assert.assertTrue(libraryLoginPage.wrongEmailOrPasswordErrorMassage.isDisplayed());
+        Driver.closeDriver();
+    }
+
 
 }
