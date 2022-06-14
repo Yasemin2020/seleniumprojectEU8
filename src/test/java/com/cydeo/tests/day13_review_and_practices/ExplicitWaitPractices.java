@@ -51,12 +51,32 @@ public class ExplicitWaitPractices {
     public void enable_button_test(){
 
         //3- Click to “Enable” button
+        System.out.println("inputBox.isEnabled() = " + dynamicControlsPage.inputBox.isEnabled());
         dynamicControlsPage.enableButton.click();
 
+        System.out.println("inputBox.isEnabled() = " + dynamicControlsPage.inputBox.isEnabled());
+
         //4- Wait until “loading bar disappears”
+        //Calling our ExplicitWait utility method to wait loadingBar to disappear
+
+        BrowserUtils.waitForInvisibilityOf(dynamicControlsPage.loadingBar);
+
+        System.out.println("inputBox.isEnabled() = " + dynamicControlsPage.inputBox.isEnabled());
+
+
         //5- Verify:
         //a. Input box is enabled.
+        Assert.assertTrue(dynamicControlsPage.inputBox.isEnabled());
         //b. “It’s enabled!” message is displayed.
+        Assert.assertTrue(dynamicControlsPage.itsGoneMessage.isDisplayed());
+        //Check the String value is matching as expected: “It’s enabled!”
+        Assert.assertTrue(dynamicControlsPage.itsGoneMessage.getText().equals("It's enabled!"));
+
+
+
+
+
+
     }
 
 
